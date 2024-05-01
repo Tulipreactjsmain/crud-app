@@ -1,5 +1,13 @@
 <?php
+require __DIR__ . '/vendor/autoload.php';
+ 
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
+$host = $_ENV['DB_HOST'];
+$username = $_ENV['DB_USERNAME'];
+$password = $_ENV['DB_PASSWORD'];
+$database = $_ENV['DB'];
 // $servername = "localhost"; 
 // $username = "root"; 
 // $password = ""; 
@@ -15,11 +23,11 @@
 
 
 
-$host = "crud.c5gaq2u68unv.eu-north-1.rds.amazonaws.com";
-$username = "admin";
-$password = "Dbpassword20#";
-$database = "new_database";
-$port = 3306;
+// $host = "crud.c5gaq2u68unv.eu-north-1.rds.amazonaws.com";
+// $username = "admin";
+// $password = "Dbpassword20#";
+// $database = "new_database";
+// $port = 3306;
 
 
 $conn = mysqli_connect($host, $username, $password, $database);
