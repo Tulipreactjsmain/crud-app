@@ -1,5 +1,6 @@
 <?php
-include_once "./databse/connection.php"
+include_once "./database/connection.php";
+
 ?>
 <html lang="en">
 
@@ -25,7 +26,7 @@ include_once "./databse/connection.php"
                         Add New Book
                     </div>
                     <div class="card-body">
-                        <form id="createForm" method="POST" action="./controller/controller.php">
+                        <form id="createForm" method="POST" action="/controllers/create_book.php">
                             <div class="form-group">
                                 <label for="title">Title:</label>
                                 <input type="text" class="form-control" id="title" name="title" required>
@@ -40,7 +41,7 @@ include_once "./databse/connection.php"
                             </div>
                             <div class="form-group">
                                 <label for="year">Publication Year:</label>
-                                <input type="number" class="form-control" id="year" name="year" required>
+                                <input type="number" class="form-control" id="publication_year" name="publication_year" required>
                             </div>
                             <button type="submit" class="btn mt-3" style="background-color:#CED0CE;">Submit</button>
                         </form>
@@ -53,29 +54,7 @@ include_once "./databse/connection.php"
                         Book Records
                     </div>
                     <div class="card-body">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Title</th>
-                                    <th>Genre</th>
-                                    <th>Author</th>
-                                    <th>Publication Year</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody id="bookList">
-                                <tr>
-                                    <td>Book Title</td>
-                                    <td>Book Genre</td>
-                                    <td>Book Author</td>
-                                    <td>Publication Year</td>
-                                    <td>
-                                        <button class="btn btn-primary">Update</button>
-                                        <button class="btn btn-danger">Delete</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <?php include_once "./components/book_table_template.php"; ?>
                     </div>
                 </div>
             </div>
