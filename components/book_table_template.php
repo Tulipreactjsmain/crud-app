@@ -1,5 +1,7 @@
 <?php
-$books = include_once "../controller/fetch_book.php";
+$fetchBook = $_SERVER['DOCUMENT_ROOT'] . "/controllers/fetch_book.php";
+
+include_once $fetchBook;
 
 echo "<table class='table'>";
 echo "<thead>";
@@ -26,4 +28,3 @@ foreach ($books as $book) {
 }
 echo "</tbody>";
 echo "</table>";
-
