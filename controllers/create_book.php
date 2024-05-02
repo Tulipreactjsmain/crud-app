@@ -1,7 +1,5 @@
 <?php
-$dbConnection = $_SERVER['DOCUMENT_ROOT'] . "/database/connection.php";
-
-include_once $dbConnection;
+include_once $_SERVER['DOCUMENT_ROOT'] . "/database/connection.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $title = $_POST['title'];

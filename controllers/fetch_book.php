@@ -1,4 +1,5 @@
 <?php
+include_once $_SERVER['DOCUMENT_ROOT'] . "/models/schema.php"; 
 include_once $_SERVER['DOCUMENT_ROOT'] . "/database/connection.php";
 
 $sql = "SELECT * FROM crud";

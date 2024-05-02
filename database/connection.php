@@ -1,21 +1,9 @@
 <?php
-require __DIR__ . '/vendor/autoload.php';
- 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
 
 $host = $_ENV['DB_HOST'];
 $username = $_ENV['DB_USERNAME'];
 $password = $_ENV['DB_PASSWORD'];
 $database = $_ENV['DB'];
-
-// $conn = new mysqli($servername, $username, $password, $database);
-
-// if ($conn->connect_error) {
-//     die("Connection failed: " . $conn->connect_error);
-// } 
-
-// $conn->set_charset("utf8");
 
 
 $conn = mysqli_connect($host, $username, $password, $database);
@@ -24,7 +12,8 @@ if (!$conn) {
     die("Connection to MySQL server failed: " . mysqli_connect_error());
 }
 
-echo "Connected to MySQL server successfully";
+$conn->set_charset("utf8");
+
 
 // Method to create new database in AWS sql RDS 
 
@@ -73,12 +62,3 @@ echo "Connected to MySQL server successfully";
 // }
 
 // echo "Connected to database successfully";
-
-
-// $conn = new mysqli($host, $username, $password, $database, $port);
-
-// if ($conn->connect_error) {
-//     die("Connection failed: " . $conn->connect_error);
-// }
-
-// $conn->set_charset("utf8");
