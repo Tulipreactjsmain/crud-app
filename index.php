@@ -1,6 +1,6 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
- 
+
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
@@ -29,7 +29,7 @@ $dotenv->load();
                         Add New Book
                     </div>
                     <div class="card-body">
-                        <form id="createForm" method="POST" action="/controllers/create_book.php">
+                        <form id="createForm" method="POST" action=<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/controllers/create_book.php"; ?>>
                             <div class="form-group">
                                 <label for="title">Title:</label>
                                 <input type="text" class="form-control" id="title" name="title" required>

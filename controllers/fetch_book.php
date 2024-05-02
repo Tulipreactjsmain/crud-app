@@ -4,6 +4,11 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/database/connection.php";
 
 $sql = "SELECT * FROM crud";
 $result = $conn->query($sql);
+$result = $conn->query($sql);
+if (!$result) {
+    echo "Database error: " . $conn->error;
+    error_log("Database error: " . $conn->error);
+}
 
 $books = [];
 if ($result->num_rows > 0) {
