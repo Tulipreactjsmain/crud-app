@@ -1,5 +1,5 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . "/database/connection.php";
+include_once  "../database/connection.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $title = $_POST['title'];
@@ -14,10 +14,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->execute();
 
     if ($stmt->affected_rows > 0) {
-        header('Location: /index.php?success=true');
+        header('Location: /?success=true');
         exit;
     } else {
-        header('Location: /index.php?error=true');
+        header('Location: /?error=true');
         $conn->close();
         exit;
     }

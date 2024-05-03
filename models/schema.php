@@ -1,5 +1,5 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . "/database/connection.php";
+include_once "../database/connection.php";
 
 $tableName = 'crud';
 $sql = "SHOW TABLES LIKE '$tableName'";

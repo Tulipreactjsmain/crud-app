@@ -1,0 +1,79 @@
+input {
+    background-color: #F5F5F5 !important;
+}
+
+form.btn {
+    /* width: 100px !important; */
+    margin: 0 !important;
+    padding: 0!important;
+}
+
+form.btn button {
+    width: 100px !important;
+   padding: 6px !important;
+    /* padding: 0!important; */
+}
+
+.hover-reduce-background {
+    transition: background-color 0.3s ease !important;
+}
+
+.hover-reduce-background:hover {
+    background-color: rgba(192, 187, 187, 0.9) !important; 
+}
+
+
+.btn-primary {
+    background-color: #33AAFF !important;
+    border: #33AAFF !important;
+}
+
+.btn-danger {
+    background-color: #FF5C5C !important;
+    border: #FF5C5C !important;
+}
+
+thead {
+    vertical-align: top !important;
+}
+
+td {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+
+form.input-group {
+    margin: 0 !important;
+}
+
+.input-group {
+    flex-wrap: nowrap !important;
+}
+
+.input-group>.form-floating {
+    flex: none !important;
+    width: auto !important;
+    min-width: none !important;
+}
+
+.input-group .form-control {
+    width: auto !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    height: 39px !important;
+}
+
+.form-control::placeholder {
+    color: black !important;
+}
+
+.form-control:focus {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+
+}
+
+.bi-search {
+    color: black !important;
+    display: flex !important;
+}
