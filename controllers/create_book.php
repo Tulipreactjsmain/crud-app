@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO crud (title, author, genre, publication_year) VALUES (?, ?, ?, ?)";
 
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssi", $title, $author, $genre, $publication_year);
+    $stmt->bind_param("ssss", $title, $author, $genre, $publication_year);
     $stmt->execute();
 
     if ($stmt->affected_rows > 0) {

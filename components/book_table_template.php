@@ -24,7 +24,7 @@ if (is_array($books) && !in_array("No matching books found '$searchQuery'", $boo
         echo "<td>" . $book["genre"] . "</td>";
         echo "<td>" . $book["author"] . "</td>";
         echo "<td>" . $book["publication_year"] . "</td>";
-        echo "<td>";
+        echo "<td style='display:flex; gap:15px; flex-wrap: wrap;'>";
         echo " <form method='GET' class='btn btn-primary' action='../controllers/update_book.php'>";
         echo "<input type='hidden' name='id' value='$bookId'>";
         echo " <button class='bg-transparent border-0 text-white hover-reduce-background rounded-2' type='submit' >Update</button>";
