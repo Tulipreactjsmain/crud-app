@@ -1,5 +1,6 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . "/controllers/create_book.php";
+include_once "create_book.php";
+include "../database/connection.php";
 
 if (isset($_GET['query'])) {
     $searchQuery = $_GET['query'];
@@ -28,7 +29,17 @@ if (isset($_GET['query'])) {
     $stmt->bind_param(str_repeat('s', count($columns)), ...$searchQueries);
     $stmt->execute();
     $searchResult = $stmt->get_result();
+    $rows = [];
+    while ($row = $searchResult->fetch_assoc()) {
+        $rows[] = $row;
+    }
+    $searchResultJSON = json_encode($rows);
+
+    setcookie('searchResult', $searchResultJSON, 0, "/"); 
+    setcookie('searchQuery', $searchQuery, 0, "/");
+    $conn->close();
+
+    if ($searchResult) {
+        header("Location: /?search=$searchQuery");
+    };
 }
-
-
-

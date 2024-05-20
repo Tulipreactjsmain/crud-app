@@ -1,5 +1,5 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . "/database/connection.php";
+include_once "../database/connection.php";
 
 $tableName = 'crud';
 $sql = "SHOW TABLES LIKE '$tableName'";
@@ -12,7 +12,7 @@ if ($result->num_rows == 0) {
             title VARCHAR(255) NOT NULL,
             author VARCHAR(255) NOT NULL,
             genre VARCHAR(255) NOT NULL,
-            publication_year INT NOT NULL
+            publication_year DATE NOT NULL
         )
     ";
     $createTableStmt = $conn->prepare($createTableSQL);
